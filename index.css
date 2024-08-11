@@ -14,6 +14,7 @@ body {
     height: 100vh;
     overflow: hidden; /* Prevent scrollbars */
     animation: fadeInBody 0.5s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 }
 
 /* Fade-in Animation for Body */
@@ -30,7 +31,8 @@ body {
 
 /* Container for centering content */
 .auth-container {
-    max-width: 400px; /* Smaller width for the container */
+    max-width: 400px; /* Maximum width for the container */
+    width: 90%; /* Responsive width */
     padding: 20px; /* Reduced padding */
     background: #1c1c1c; /* Darker background for container */
     border-radius: 10px; /* Slightly smaller border-radius */
@@ -38,7 +40,6 @@ body {
     text-align: center;
     animation: fadeInSection 0.7s ease-in-out;
     position: relative; /* For absolute positioning of floating labels */
-    width: 100%; /* Ensure container width is 100% */
     box-sizing: border-box; /* Include padding and border in element's width/height */
 }
 
@@ -88,7 +89,6 @@ body {
 .input-container {
     position: relative;
     width: 100%; /* Ensure container takes full width */
-    max-width: 100%; /* Constrain to max-width of form */
     margin-bottom: 15px;
 }
 
@@ -96,10 +96,9 @@ body {
 .auth-container input {
     position: relative; /* For absolute positioning of floating labels */
     border: 2px solid #1c1c1c; /* Match container background */
-    padding: 8px 15px; /* Reduced padding */
+    padding: 12px 15px; /* Adjusted padding */
     border-radius: 8px; /* Slightly smaller border-radius */
     width: 100%; /* Full width of input container */
-    max-width: 300px; /* Smaller max-width for inputs */
     font-size: 14px; /* Smaller font size */
     background: #333; /* Slightly lighter dark background for input */
     color: #e0e0e0; /* Light text color */
@@ -109,7 +108,10 @@ body {
 
 /* Placeholder Styling */
 .auth-container input::placeholder {
-    color: transparent; /* Hide placeholder text */
+    color: #999; /* Lighter placeholder text */
+    font-size: 14px; /* Consistent font size */
+    opacity: 1; /* Ensure placeholder is visible */
+    transition: opacity 0.3s ease, color 0.3s ease; /* Smooth transitions */
 }
 
 /* Input Focus Styling */
@@ -145,7 +147,7 @@ body {
     background-color: #00FF9C; /* Glowing green */
     border: none;
     color: #121212; /* Dark text color for contrast */
-    padding: 10px 20px; /* Reduced padding */
+    padding: 12px 25px; /* Adjusted padding */
     font-size: 16px; /* Smaller font size */
     cursor: pointer;
     border-radius: 8px; /* Slightly smaller border-radius */
@@ -200,4 +202,103 @@ body {
 
 .auth-container a:hover {
     text-decoration: underline;
+}
+
+/* Responsive Design for All Devices */
+@media (max-width: 1200px) {
+    .auth-container {
+        width: 60%; /* Adjust container width for large screens */
+    }
+
+    .auth-container h2 {
+        font-size: 22px; /* Adjust heading size */
+    }
+
+    .auth-container input {
+        font-size: 14px; /* Adjust input font size */
+    }
+
+    .auth-container button {
+        padding: 12px 25px; /* Adjust button padding */
+        font-size: 15px; /* Adjust button font size */
+    }
+}
+
+@media (max-width: 992px) {
+    .auth-container {
+        width: 70%; /* Adjust container width for medium screens */
+    }
+
+    .auth-container h2 {
+        font-size: 20px; /* Adjust heading size */
+    }
+
+    .auth-container input {
+        font-size: 13px; /* Adjust input font size */
+    }
+
+    .auth-container button {
+        padding: 10px 20px; /* Adjust button padding */
+        font-size: 14px; /* Adjust button font size */
+    }
+}
+
+@media (max-width: 768px) {
+    .auth-container {
+        width: 80%; /* Adjust container width for smaller screens */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .auth-container h2 {
+        font-size: 18px; /* Adjust heading size */
+    }
+
+    .auth-container button {
+        font-size: 14px; /* Adjust button font size */
+        padding: 10px 20px; /* Adjust padding */
+    }
+
+    .auth-container input {
+        font-size: 13px; /* Adjust input font size */
+    }
+}
+
+@media (max-width: 576px) {
+    .auth-container {
+        width: 90%; /* Adjust container width for small screens */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .auth-container h2 {
+        font-size: 16px; /* Adjust heading size */
+    }
+
+    .auth-container button {
+        font-size: 13px; /* Adjust button font size */
+        padding: 8px 18px; /* Adjust padding */
+    }
+
+    .auth-container input {
+        font-size: 12px; /* Adjust input font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-container {
+        width: 95%; /* Adjust container width for very small screens */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .auth-container h2 {
+        font-size: 16px; /* Adjust heading size */
+    }
+
+    .auth-container button {
+        font-size: 12px; /* Adjust button font size */
+        padding: 8px 18px; /* Adjust padding */
+    }
+
+    .auth-container input {
+        font-size: 12px; /* Adjust input font size */
+    }
 }
