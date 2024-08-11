@@ -1,11 +1,5 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "./index.hmtl",
-      "use": "@vercel/node"
-    }
-  ],
-
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+     "rewrites":[
+              {"source":"/(.*)","destination":"/"}
+      ]
 }
