@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Interface</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <!-- <div class="loader-container">
+        <div class="loader"></div>
+    </div> -->
+    <main class="text-container">
+       
+    </main>
+    
+    
+    
+    <div class="container">
+        <!-- Role Selection -->
+        <div class="role-selection" id="role-selection">
+            <h2>Are you a User or Admin?</h2>
+            <button id="user-btn">User</button>
+            <button id="admin-btn">Admin</button>
+        </div>
+
+        <!-- User Details Form -->
+        <div class="user-details hidden" id="user-details">
+            <h2>Enter Your Details</h2>
+            <form id="details-form">
+                <input type="text" id="username" placeholder="Username" required />
+                <input type="text" id="department" placeholder="Department" required />
+                <button type="button" id="start-quiz">Start Quiz</button>
+            </form>
+        </div>
+
+        <!-- Quiz Interface -->
+        <div class="quiz-container hidden" id="quiz">
+            <div class="quiz-body">
+                <h2 id="question">Question Text</h2>
+                <ul>
+                    <li>
+                        <input type="radio" name="answer" id="a" class="answer" />
+                        <label for="a" id="a_text">Answer A</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="answer" id="b" class="answer" />
+                        <label for="b" id="b_text">Answer B</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="answer" id="c" class="answer" />
+                        <label for="c" id="c_text">Answer C</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="answer" id="d" class="answer" />
+                        <label for="d" id="d_text">Answer D</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="quiz-footer">
+                <button type="button" id="submit-btn">Submit</button>
+            </div>
+        </div>
+
+        <!-- Quiz Result Table -->
+        <div class="result-container hidden" id="result-container">
+            <h2>Your Quiz Results</h2>
+            <table id="result-table">
+                <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>Your Answer</th>
+                        <th>Correct Answer</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamic content will be inserted here -->
+                </tbody>
+            </table>
+            <p id="final-score"></p>
+        </div>
+
+        <!-- Admin Interface -->
+        <div class="admin-container hidden" id="admin-container">
+            <h2>Admin - Add New Question</h2>
+            <form id="admin-form">
+                <input type="text" id="question-input" placeholder="Enter Question" required />
+                <input type="text" id="option_a" placeholder="Option A" required />
+                <input type="text" id="option_b" placeholder="Option B" required />
+                <input type="text" id="option_c" placeholder="Option C" required />
+                <input type="text" id="option_d" placeholder="Option D" required />
+                <input type="text" id="correct_answer" placeholder="Correct Answer (a, b, c, or d)" required />
+                <button type="button" id="add-question">Add Question</button>
+            </form>
+        </div>
+    </div>
+    <script src="quiz.js"></script>
+</body>
+</html>

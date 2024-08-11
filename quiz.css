@@ -1,0 +1,547 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevents scrollbars if content is taller than viewport */
+    animation: fadeInBody 0.5s ease-in-out;
+}
+
+/* Fade-in Animation for Body */
+@keyframes fadeInBody {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Container for centering content */
+.container {
+    max-width: 1200px;
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack content vertically */
+    text-align: center; /* Center text */
+    height: 100vh; /* Full height to ensure proper vertical centering */
+}
+
+/* Role Selection */
+.role-selection,
+.user-details,
+.quiz-container,
+.result-container,
+.admin-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background: #1e1e1e; /* Dark background */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeInSection 0.7s ease-in-out;
+    border: 2px solid transparent; /* Transparent border for glow effect */
+    position: relative; /* For pseudo-element glow effect */
+}
+
+/* Fade-in Animation for Sections */
+@keyframes fadeInSection {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Slide up effect */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Neon Glow Effect */
+.role-selection::before,
+.user-details::before,
+.quiz-container::before,
+.result-container::before,
+.admin-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px; /* Match border-radius */
+    box-shadow: 0 0 15px rgba(0, 255, 156, 0.7); /* Neon green glow */
+    z-index: -1; /* Behind the content */
+}
+
+/* Align content in the middle */
+.text-container {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+}
+
+/* Additional centering for specific sections */
+.role-selection,
+.user-details,
+.quiz-container,
+.result-container,
+.admin-container {
+    margin: 10px 0; /* Add spacing between sections */
+    text-align: center;
+}
+
+/* Role Selection */
+.role-selection h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #00FF9C; /* Glowing green */
+    animation: fadeInText 0.8s ease-in-out;
+}
+
+.role-selection button {
+    background-color: #00FF9C; /* Glowing green */
+    border: none;
+    color: #121212; /* Dark text color for contrast */
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px; /* Rounded corners */
+    margin: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    animation: fadeInButton 0.5s ease-in-out;
+}
+
+.role-selection button:hover {
+    background-color: #00e68c; /* Slightly darker green */
+    box-shadow: 0 0 15px rgba(0, 255, 156, 0.7); /* Glowing effect */
+    animation: pulse 1.5s infinite;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* User Details Form */
+.user-details h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #00FF9C; /* Glowing green */
+    animation: fadeInText 0.8s ease-in-out;
+}
+
+.user-details form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInForm 0.6s ease-in-out;
+}
+
+/* Fade-in Animation for Form */
+@keyframes fadeInForm {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Slide down effect */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.user-details input {
+    border: 2px solid #00FF9C; /* Glowing green border */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px; /* Rounded corners */
+    width: 100%;
+    max-width: 400px;
+    font-size: 16px;
+    background-color: #333; /* Dark input background */
+    color: #e0e0e0; /* Light text color */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-details input:focus {
+    border-color: #00e68c; /* Slightly darker green */
+    box-shadow: 0 0 10px rgba(0, 255, 156, 0.5); /* Glowing effect */
+}
+
+.user-details button {
+    background-color: #00FF9C; /* Glowing green */
+    border: none;
+    color: #121212; /* Dark text color for contrast */
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    animation: fadeInButton 0.5s ease-in-out;
+}
+
+.user-details button:hover {
+    background-color: #00e68c; /* Slightly darker green */
+    box-shadow: 0 0 15px rgba(0, 255, 156, 0.7); /* Glowing effect */
+    animation: pulse 1.5s infinite;
+}
+
+/* Quiz Container Styles */
+.quiz-container {
+    background: #1e1e1e; /* Dark background */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    position: relative;
+    border: 2px solid transparent; /* Transparent border for glow effect */
+}
+
+/* Quiz Body and Footer Styles */
+.quiz-body h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #00FF9C; /* Glowing green */
+    animation: fadeInText 0.8s ease-in-out;
+}
+
+.quiz-body ul {
+    list-style: none;
+    padding: 0;
+    animation: fadeInList 0.6s ease-in-out;
+}
+
+/* Fade-in Animation for List Items */
+@keyframes fadeInList {
+    from {
+        opacity: 0;
+        transform: translateX(-20px); /* Slide from left */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.quiz-body li {
+    margin-bottom: 15px;
+}
+
+.quiz-body input[type="radio"] {
+    margin-right: 10px;
+}
+
+.quiz-body label {
+    font-size: 18px;
+    cursor: pointer;
+    color: #e0e0e0; /* Light text color */
+}
+
+.quiz-footer {
+    text-align: center;
+    margin-top: 20px;
+    animation: fadeInFooter 0.6s ease-in-out;
+}
+
+/* Fade-in Animation for Footer */
+@keyframes fadeInFooter {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Slide up effect */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.quiz-footer button {
+    background-color: #00FF9C; /* Glowing green */
+    border: none;
+    color: #121212; /* Dark text color for contrast */
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    animation: fadeInButton 0.5s ease-in-out;
+}
+
+.quiz-footer button:hover {
+    background-color: #00e68c; /* Slightly darker green */
+    box-shadow: 0 0 15px rgba(0, 255, 156, 0.7); /* Glowing effect */
+    animation: pulse 1.5s infinite;
+}
+
+/* Result Table */
+.result-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    animation: fadeInTable 0.7s ease-in-out;
+}
+
+/* Fade-in Animation for Table */
+@keyframes fadeInTable {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Slide up effect */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-container th, .result-container td {
+    padding: 10px;
+    border-bottom: 1px solid #333; /* Dark border */
+}
+
+.result-container th {
+    background-color: #00FF9C; /* Glowing green */
+    color: #121212; /* Dark text color for contrast */
+}
+
+.result-container tr:nth-child(even) {
+    background-color: #2c2c2c; /* Slightly lighter dark background */
+}
+
+.result-container #final-score {
+    font-size: 22px;
+    font-weight: 600;
+    color: #00FF9C; /* Glowing green */
+    animation: fadeInScore 0.8s ease-in-out;
+}
+
+/* Fade-in Animation for Score */
+@keyframes fadeInScore {
+    from {
+        opacity: 0;
+        transform: scale(0.8); /* Slight zoom-in effect */
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Admin Interface */
+.admin-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #00FF9C; /* Glowing green */
+    animation: fadeInText 0.8s ease-in-out;
+}
+
+.admin-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInForm 0.6s ease-in-out;
+}
+
+.admin-container input {
+    border: 2px solid #00FF9C; /* Glowing green border */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px; /* Rounded corners */
+    width: 100%;
+    max-width: 400px;
+    font-size: 16px;
+    background-color: #333; /* Dark input background */
+    color: #e0e0e0; /* Light text color */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-container input:focus {
+    border-color: #00e68c; /* Slightly darker green */
+    box-shadow: 0 0 10px rgba(0, 255, 156, 0.5); /* Glowing effect */
+}
+
+.admin-container button {
+    background-color: #00FF9C; /* Glowing green */
+    border: none;
+    color: #121212; /* Dark text color for contrast */
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    animation: fadeInButton 0.5s ease-in-out;
+}
+
+.admin-container button:hover {
+    background-color: #00e68c; /* Slightly darker green */
+    box-shadow: 0 0 15px rgba(0, 255, 156, 0.7); /* Glowing effect */
+    animation: pulse 1.5s infinite;
+}
+
+/* Hide elements by default */
+.hidden {
+    display: none;
+}
+
+/* Loader Container */
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it appears above other content */
+    animation: fadeInLoader 0.5s ease-in-out;
+}
+
+/* Fade-in Animation for Loader Container */
+@keyframes fadeInLoader {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Loader */
+.loader {
+    border: 8px solid #1e1e1e; /* Dark background color */
+    border-top: 8px solid #00FF9C; /* Glowing green color */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1.5s linear infinite, glow 1.5s ease-in-out infinite;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Glowing Effect */
+@keyframes glow {
+    0%, 100% { 
+        box-shadow: 0 0 10px #00FF9C; /* Glowing effect */
+    }
+    50% { 
+        box-shadow: 0 0 20px #00FF9C; /* Stronger glow */
+    }
+}
+
+/* Fade-in Animation for Text */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-in Animation for Button */
+@keyframes fadeInButton {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .role-selection,
+    .user-details,
+    .quiz-container,
+    .result-container,
+    .admin-container {
+        padding: 15px;
+        margin: 5px 0;
+    }
+
+    .role-selection h2,
+    .user-details h2,
+    .quiz-body h2,
+    .result-container #final-score,
+    .admin-container h2 {
+        font-size: 20px;
+    }
+
+    .user-details input,
+    .admin-container input {
+        max-width: 90%;
+    }
+
+    .role-selection button,
+    .user-details button,
+    .quiz-footer button,
+    .admin-container button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .quiz-body label {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .role-selection,
+    .user-details,
+    .quiz-container,
+    .result-container,
+    .admin-container {
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+    .role-selection h2,
+    .user-details h2,
+    .quiz-body h2,
+    .result-container #final-score,
+    .admin-container h2 {
+        font-size: 18px;
+    }
+
+    .user-details input,
+    .admin-container input {
+        max-width: 100%;
+    }
+
+    .role-selection button,
+    .user-details button,
+    .quiz-footer button,
+    .admin-container button {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .quiz-body label {
+        font-size: 14px;
+    }
+}
+

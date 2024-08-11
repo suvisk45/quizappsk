@@ -1,0 +1,203 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #000; /* Solid dark background */
+    color: #e0e0e0; /* Light text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrollbars */
+    animation: fadeInBody 0.5s ease-in-out;
+}
+
+/* Fade-in Animation for Body */
+@keyframes fadeInBody {
+    from {
+        opacity: 0;
+        transform: scale(1.05); /* Slight zoom effect */
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Container for centering content */
+.auth-container {
+    max-width: 400px; /* Smaller width for the container */
+    padding: 20px; /* Reduced padding */
+    background: #1c1c1c; /* Darker background for container */
+    border-radius: 10px; /* Slightly smaller border-radius */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7); /* Darker shadow */
+    text-align: center;
+    animation: fadeInSection 0.7s ease-in-out;
+    position: relative; /* For absolute positioning of floating labels */
+    width: 100%; /* Ensure container width is 100% */
+    box-sizing: border-box; /* Include padding and border in element's width/height */
+}
+
+/* Fade-in Animation for Sections */
+@keyframes fadeInSection {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Slide up effect */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Auth Container Heading */
+.auth-container h2 {
+    font-size: 24px; /* Smaller heading font size */
+    margin-bottom: 15px; /* Reduced margin-bottom */
+    color: #00FF9C; /* Glowing green */
+    text-shadow: 0 0 8px rgba(0, 255, 156, 0.8); /* Glowing text */
+    animation: fadeInText 0.8s ease-in-out;
+}
+
+/* Auth Container Form */
+.auth-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInForm 0.6s ease-in-out;
+    width: 100%; /* Ensure form takes full width */
+}
+
+/* Fade-in Animation for Form */
+@keyframes fadeInForm {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Slide down effect */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Input Container for Floating Labels */
+.input-container {
+    position: relative;
+    width: 100%; /* Ensure container takes full width */
+    max-width: 100%; /* Constrain to max-width of form */
+    margin-bottom: 15px;
+}
+
+/* Neomorphism Effect for Inputs */
+.auth-container input {
+    position: relative; /* For absolute positioning of floating labels */
+    border: 2px solid #1c1c1c; /* Match container background */
+    padding: 8px 15px; /* Reduced padding */
+    border-radius: 8px; /* Slightly smaller border-radius */
+    width: 100%; /* Full width of input container */
+    max-width: 300px; /* Smaller max-width for inputs */
+    font-size: 14px; /* Smaller font size */
+    background: #333; /* Slightly lighter dark background for input */
+    color: #e0e0e0; /* Light text color */
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.4), inset -4px -4px 8px rgba(0, 0, 0, 0.2);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Placeholder Styling */
+.auth-container input::placeholder {
+    color: transparent; /* Hide placeholder text */
+}
+
+/* Input Focus Styling */
+.auth-container input:focus {
+    border-color: #00e68c; /* Slightly darker green */
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.4), inset -4px -4px 8px rgba(0, 0, 0, 0.2), 0 0 12px rgba(0, 255, 156, 0.7); /* Glowing effect */
+    outline: none; /* Remove default outline */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Floating Label Styles */
+.auth-container input:not(:placeholder-shown) + label,
+.auth-container input:focus + label {
+    top: -12px;
+    left: 10px;
+    font-size: 12px;
+    color: #00e68c; /* Slightly darker green */
+    transform: scale(0.9);
+}
+
+.auth-container label {
+    position: absolute;
+    top: 8px;
+    left: 15px;
+    font-size: 14px; /* Smaller font size */
+    color: #e0e0e0; /* Light text color */
+    transition: top 0.3s ease, left 0.3s ease, font-size 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    pointer-events: none; /* Prevent label from being clickable */
+}
+
+/* Auth Container Button */
+.auth-container button {
+    background-color: #00FF9C; /* Glowing green */
+    border: none;
+    color: #121212; /* Dark text color for contrast */
+    padding: 10px 20px; /* Reduced padding */
+    font-size: 16px; /* Smaller font size */
+    cursor: pointer;
+    border-radius: 8px; /* Slightly smaller border-radius */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    animation: fadeInButton 0.5s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.auth-container button:hover {
+    background-color: #00e68c; /* Slightly darker green */
+    box-shadow: 0 6px 12px rgba(0, 255, 156, 0.8); /* Glowing effect */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Keyframe Animations */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInButton {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Link Styling */
+.auth-container a {
+    color: #00FF9C;
+    text-decoration: none;
+}
+
+.auth-container a:hover {
+    text-decoration: underline;
+}
